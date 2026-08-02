@@ -1,7 +1,6 @@
 """
 utils.py
-Data loading, preprocessing, and augmentation utilities for the
-Self-Driving Car behavioral cloning project.
+Data loading, preprocessing, and augmentation utilities for the Self-Driving Car behavioral cloning project.
 """
 
 import os
@@ -12,17 +11,13 @@ import matplotlib.pyplot as plt
 from sklearn.utils import shuffle
 
 
-# ---------------------------------------------------------------------
 # 1. Loading the driving log
-# ---------------------------------------------------------------------
 def load_driving_log(csv_path):
     """
     Loads driving_log.csv produced by the simulator.
     Columns: center, left, right, steering, throttle, brake, speed
 
-    Returns a DataFrame with just the columns we need (center image path
-    + steering angle), and also extracts just the filename (not the full
-    absolute path) so the data is portable across machines.
+    Returns a DataFrame with just the columns we need (center image path + steering angle), and also extracts just the filename (not the full absolute path) so the data is portable across machines.
     """
     columns = ["center", "left", "right", "steering", "throttle", "brake", "speed"]
     data = pd.read_csv(csv_path, names=columns)
@@ -35,9 +30,7 @@ def load_driving_log(csv_path):
     return data
 
 
-# ---------------------------------------------------------------------
 # 2. Visualizing steering angle distribution
-# ---------------------------------------------------------------------
 def plot_steering_histogram(data, num_bins=25, samples_per_bin=400, save_path=None):
     """
     Plots a histogram of steering angles to check dataset balance.
@@ -83,14 +76,10 @@ def balance_data(data, num_bins=25, samples_per_bin=400):
     return data
 
 
-# ---------------------------------------------------------------------
 # 3. Building (image_path, steering) pairs, using center/left/right
-# ---------------------------------------------------------------------
 def load_image_steering(img_dir, data, side_camera_correction=0.2):
     """
-    Builds a flat list of (image_path, steering_angle) using center,
-    left, and right camera images with a steering correction applied
-    to the left/right images.
+    Builds a flat list of (image_path, steering_angle) using center, left, and right camera images with a steering correction applied to the left/right images.
     """
     image_paths = []
     steerings = []
@@ -114,9 +103,7 @@ def load_image_steering(img_dir, data, side_camera_correction=0.2):
     return np.asarray(image_paths), np.asarray(steerings)
 
 
-# ---------------------------------------------------------------------
 # 4. Augmentation (applied randomly, TRAINING SET ONLY)
-# ---------------------------------------------------------------------
 def zoom(image):
     zoom_factor = np.random.uniform(1, 1.3)
     h, w = image.shape[:2]
@@ -173,13 +160,10 @@ def augment_image(image, steering):
     return image, steering
 
 
-# ---------------------------------------------------------------------
 # 5. Preprocessing (applied to EVERY image, train + val + inference)
-# ---------------------------------------------------------------------
 def preprocess(image):
     """
-    Crop -> YUV -> Gaussian Blur -> Resize (200x66, NVIDIA input size)
-    -> Normalize to [0, 1]
+    Crop -> YUV -> Gaussian Blur -> Resize (200x66, NVIDIA input size) -> Normalize to [0, 1]
     Expects an RGB image, e.g. read via mpimg.imread or cv2 (converted to RGB).
     """
     # Crop off sky (top) and hood/dashboard (bottom)
@@ -200,9 +184,7 @@ def preprocess(image):
     return image
 
 
-# ---------------------------------------------------------------------
 # 6. Batch generator
-# ---------------------------------------------------------------------
 def batch_generator(image_paths, steering_angles, batch_size, is_training):
     """
     Infinite generator that yields (X_batch, y_batch).
