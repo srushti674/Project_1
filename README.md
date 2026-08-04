@@ -9,7 +9,7 @@ drove the track, purely from images.
 
 Built for DPS920 (Computer Vision) - Final Project By Group 8 - Yash Akbhari, Kumudhini, Srushti Patel.
 
-## How it works, in plain terms
+## How it works
 
 1. **Drive the track yourself** in the simulator's Training Mode, while it
    records what the front-facing camera sees and what steering angle you
