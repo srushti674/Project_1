@@ -4,7 +4,7 @@ This project trains a neural network to drive a car around a track in the
 Udacity self-driving car simulator. The car has a front camera, and the
 model's only job is to look at what the camera sees and decide how much
 to turn the steering wheel — left, right, or straight. This is a classic
-** behavioural cloning** setup: the model learns to imitate how a human
+behavioural cloning setup: the model learns to imitate how a human
 drove the track, purely from images.
 
 Built for DPS920 (Computer Vision) - Final Project By Group 8 - Yash Akbhari, Kumudhini, Srushti Patel.
@@ -68,7 +68,7 @@ represented too.
 
 ## Step 3 — Train the model
 
-Open `train.py` and update the paths at the top to point at your own
+Open `train.py` and update the paths at the top to point to your own
 `driving_log.csv` and `IMG` folder:
 
 ```python
@@ -113,7 +113,3 @@ prediction. Two dropout layers were added (not in the original NVIDIA
 diagram) to help the model generalize better, since the training dataset
 here is much smaller than NVIDIA's original.
 
-
-  `python-socketio` / `python-engineio` versions mentioned above; a
-  version mismatch here causes the handshake to silently fail even
-  though the connection looks "accepted."
