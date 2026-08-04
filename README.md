@@ -63,9 +63,8 @@ A good dataset has a visible spike near 0° (straight driving is common)
 but shouldn't be *overwhelmingly* just that - you want turns
 represented too.
 
-<img width="1797" height="1023" alt="ss_img3" src="https://github.com/user-attachments/assets/885c8590-e374-4586-8168-6ab3736e61a5" />
 <img width="1800" height="1023" alt="ss_img2" src="https://github.com/user-attachments/assets/7aa68ce3-c500-4cd5-8740-86c067022547" />
-
+<img width="1797" height="1023" alt="ss_img3" src="https://github.com/user-attachments/assets/885c8590-e374-4586-8168-6ab3736e61a5" />
 
 ## Step 3 — Train the model
 
