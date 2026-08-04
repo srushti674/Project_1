@@ -31,7 +31,7 @@ Built for DPS920 (Computer Vision) - Final Project By Group 8 - Yash Akbhari, Ku
 | `train.py` | The main training script — loads the data, balances it, trains the model, and saves the result as `model.h5`. |
 | `check_data.py` | A small standalone script for quickly checking the steering angle distribution in a CSV before committing to a full training run. |
 | `model.h5` | The trained model — this is what actually drives the car. |
-| `TestSimulation.py` / `drive.py` | Connects the trained model to the simulator. Run this, then start Autonomous Mode in the simulator — the script receives each camera frame, predicts a steering angle, and sends it back to the simulator in real time. |
+| `TestSimulation.py` | Connects the trained model to the simulator. Run this, then start Autonomous Mode in the simulator — the script receives each camera frame, predicts a steering angle, and sends it back to the simulator in real time. |
 
 ## Setup
 
